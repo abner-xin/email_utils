@@ -1,9 +1,11 @@
 import time
 from email.header import Header
-from message import IMSMessage, IMSMessageAttachment, IMSMIMEMultipartAlternative, \
-    IMSMIMEMultipartMixed, IMSMIMEBase, IMSCharset
 from email.utils import formatdate, make_msgid
 from logger import logger
+
+from .message import IMSMessage
+from .mime import IMSMessageAttachment, IMSMIMEMultipartAlternative, \
+    IMSMIMEMultipartMixed, IMSMIMEBase, IMSCharset
 
 
 class IMSMessageComposer(IMSMessage):
