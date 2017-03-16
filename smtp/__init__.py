@@ -13,7 +13,7 @@ def sendmail(server, port, sender, recipients, email, starttls=None, key=None, c
     if starttls:
         s.starttls(key, cert)
     s.sendmail(sender, recipients, email)
-    s.close()
+    s.quit()
 
     print "email is sent OK"
     return s
