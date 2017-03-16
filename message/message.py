@@ -208,6 +208,7 @@ class IMSMessage(Message):
         return self.is_contain(s, self.attachments[name], match_exact)
 
     def is_equal(self, message, match_subject=True, match_body=True, match_attachment=True):
+        """only check subject/body/attachment"""
         assert isinstance(message, IMSMessage)
         match_res = []
         if match_subject:
