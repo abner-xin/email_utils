@@ -1,0 +1,42 @@
+Date: Thu, 16 Mar 2017 16:13:19 +0800
+From: test <test@test.com>
+To: test <test@qq.com>
+Subject: plain and html body
+Mime-Version: 1.0
+Message-ID: <201703161613194387643@xinj.com>
+Content-Type: multipart/mixed;
+	boundary="----=_001_NextPart630834548414_=----"
+
+This is a multi-part message in MIME format.
+
+------=_001_NextPart630834548414_=----
+Content-Type: multipart/alternative;
+	boundary="----=_002_NextPart644813647362_=----"
+
+
+------=_002_NextPart644813647362_=----
+Content-Type: text/plain;
+	charset="us-ascii"
+Content-Transfer-Encoding: base64
+
+aGVsbG8gd29ybGQNCg0KDQoNCg0KeGluIHZpYSBmb3htYWls
+
+------=_002_NextPart644813647362_=----
+Content-Type: text/html;
+	charset="us-ascii"
+Content-Transfer-Encoding: quoted-printable
+
+<h1>hello world<h1>
+
+------=_002_NextPart644813647362_=------
+
+------=_001_NextPart630834548414_=----
+Content-Type: application/octet-stream;
+	name="hello.txt"
+Content-Transfer-Encoding: base64
+Content-Disposition: attachment;
+	filename="hello.txt"
+
+aGVsbG8=
+
+------=_001_NextPart630834548414_=------
