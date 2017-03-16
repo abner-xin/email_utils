@@ -50,10 +50,14 @@ class TestResSMTP(unittest.TestCase):
         self.assertEqual(220, s.results['connect_response'][0])
         self.assertIn(socket.getfqdn(), s.results['connect_response'][1])
 
-        self.assertDictContainsSubset({'helo_args': '', 'helo_response': (250, socket.getfqdn())}, s.results)
-        self.assertDictContainsSubset({'mail_args': self.sender, 'mail_response': (250, 'Ok')}, s.results)
-        self.assertDictContainsSubset({'rcpt_args': [self.rcpt, ], 'rcpt_response': [(250, 'Ok'), ]}, s.results)
-        self.assertDictContainsSubset({'data_args': self.email, 'data_response': (250, 'Ok')}, s.results)
+        self.assertDictContainsSubset({'helo_args': '',
+                                       'helo_response': (250, socket.getfqdn())}, s.results)
+        self.assertDictContainsSubset({'mail_args': self.sender,
+                                       'mail_response': (250, 'Ok')}, s.results)
+        self.assertDictContainsSubset({'rcpt_args': [self.rcpt, ],
+                                       'rcpt_response': [(250, 'Ok'), ]}, s.results)
+        self.assertDictContainsSubset({'data_args': self.email,
+                                       'data_response': (250, 'Ok')}, s.results)
         self.assertDictContainsSubset({'quit_response': (221, 'Bye')}, s.results)
 
     def test_send_email_to_rcpts(self):
