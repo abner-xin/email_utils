@@ -251,7 +251,7 @@ class IMSMessageParser(Parser):
             return m
 
     def message_from_string(self, s):
-        m = self.parse(s)
+        m = self.parsestr(s)
         setattr(m, "is_parsed", True)
         logger.info(m.my_log("parsed message from string"))
         return m
