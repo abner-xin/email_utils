@@ -30,6 +30,14 @@ class TestIMSMessageComposer(unittest.TestCase):
         d = IMSMessageParser().message_from_string(str(c))
         self.assertTrue(d.is_equal(IMSMessageParser().message_from_file(email_html_attachment)))
 
+    def test_compose_email_based_on(self):
+        m = IMSMessageParser(_class=IMSMessageComposer).message_from_file(email_html_attachment)
+        m.set_subject("hello 123")
+
+        d = IMSMessageParser().message_from_string(str(m))
+        self.assertEqual("hello 123", d.subject)
+        self.assertEqual([False, True, True], d.is_equal(IMSMessageParser().message_from_file(email_html_attachment)))
+
 
 if __name__ == '__main__':
     unittest.main()
