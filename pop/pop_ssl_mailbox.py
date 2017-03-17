@@ -1,4 +1,5 @@
 import StringIO
+from .pop_ssl_connection import POP3_SSL_WithProxy
 
 
 POP3_SSL_PORT = 995
@@ -27,7 +28,6 @@ class POP3_SSL_Mailbox:
             if isinstance(self.host, basestring):
                 host = [self.host, ]
 
-            from .pop_ssl_connection import POP3_SSL_WithProxy
             for o in host:
                 try:
                     self._pop3_connection = POP3_SSL_WithProxy(o, http_proxy=self.http_proxy)
